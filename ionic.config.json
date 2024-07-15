@@ -1,0 +1,7 @@
+{
+  "name": "recolha",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
