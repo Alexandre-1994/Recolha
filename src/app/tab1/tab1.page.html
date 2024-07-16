@@ -1,17 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+     Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <header>
+    <H1>Bem-Vindo a RI-Requerente</H1>
+    <span>Informações essenciais para cada processo </span>
+  </header>
+  <!-- <div class="header">
+    <H1>Welcome to SpaceSave</H1>
+  <span>Seu parceiro certo na collecta de dados da Accao Social </span>
+  </div> -->
+  <div class="inputs">
+    <ion-input label="E-mail" label-placement="floating" fill="outline" placeholder="email" style="margin-bottom: 15px"></ion-input>
+    <ion-input label="Password" label-placement="floating" fill="outline" placeholder="Password"></ion-input>
+  </div>
+  
+ <div class="buttons"> 
+  <a href="">Recovery Password</a>
+  <ion-button class="continue-b">Continue</ion-button>
+</div>
+ 
+  <ion-item-divider>
+<ion-label>Or sign up with</ion-label>
+  </ion-item-divider>
+  <div class="sign-buttons">
+    <ion-button><ion-icon name="logo-google"></ion-icon></ion-button>
+    <ion-button><ion-icon name="logo-linkedin"></ion-icon></ion-button>
+    <ion-button><ion-icon name="logo-facebook"></ion-icon></ion-button>
+  </div>
+  
+<div class="login-aternative">
+  <ion-text >already have an account? <a href="">Login</a></ion-text>
+</div>
+  
+<div class="footer">
+  <ion-text>By cliking Create account you agree to recognotes <a href="">Terms of use</a> and <a href="">Privacy policy</a></ion-text> 
+</div>
+  
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
 </ion-content>

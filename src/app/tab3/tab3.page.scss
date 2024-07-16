@@ -1,0 +1,39 @@
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  ion-avatar {
+    width: 120px;
+    height: 120px;
+    
+    img {
+      border: 2px solid var(--ion-color-primary);
+    }
+  }
+
+  ion-avatar {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    img {
+      border: 2px solid var(--ion-color-primary);
+    }
+  }
+
+  ion-avatar {
+    width: 120px;
+    height: 120px;
+    
+    @media (max-width: 576px) {
+      width: 100px;
+      height: 100px;
+    }
+    
+    img {
+      border: 2px solid var(--ion-color-primary);
+    }
+  }

@@ -1,0 +1,32 @@
+/* No seu arquivo de estilo .scss (por exemplo, sua-pagina.page.scss) */
+
+/* Estilo para o ícone com as iniciais */
+ion-thumbnail {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 56px; /* Centraliza verticalmente o texto */
+  }
+  
+  /* Estilo para o label dentro do ícone */
+  ion-thumbnail ion-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  /* Estilo para o título do item */
+  ion-label h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px; /* Espaçamento inferior */
+  }
+  
+  /* Estilo para o parágrafo de data */
+  ion-label p {
+    font-size: 14px;
+    color: #666;
+  }
+  

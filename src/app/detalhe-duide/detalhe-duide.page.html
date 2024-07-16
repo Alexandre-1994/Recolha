@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>DetalheDuide</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">DetalheDuide</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <ion-card>
+    <ion-card-header>
+      {{ inquerito.nomeRequerente }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>Data do inquérito: {{ inquerito.dataRealizacao }}</p>
+      <!-- Outras informações do inquérito -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
