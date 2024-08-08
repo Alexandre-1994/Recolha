@@ -1,2 +1,11 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+:root {
+    --primary-color: #115a22; /* Verde escuro */
+    --secondary-color: #ffffff; /* Branco */
+    --tertiary-color: #fdcc01; /* Amarelo */
+    --text-color: #4b4b4b; /* Cinza escuro */
+    --input-background: #f0f0f0; /* Cinza claro para o fundo dos inputs */
+    --border-radius: 1px; /* Arredondamento das bordas */
+  }
+  

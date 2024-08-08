@@ -1,91 +1,95 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+      <ion-back-button defaultHref="" color="light"></ion-back-button>
     </ion-buttons>
-    <ion-title>Guia de Recolha</ion-title>
+    <ion-title color="light">Guia de Recolha</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <form (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating" class="required">Nome do requerente</ion-label>
-      <ion-input type="text" [(ngModel)]="survey.name" name="name" required></ion-input>
-    </ion-item>
+  <form (ngSubmit)="onSubmit()" class="ion-margin-top">
+    <ion-list>
+      <ion-list-header color="primary">Informações Pessoais</ion-list-header>
 
-    <ion-item>
-      <ion-label position="floating" >Idade</ion-label>
-      <ion-input type="number" [(ngModel)]="survey.age" name="age" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="required" color="primary">Nome do requerente</ion-label>
+        <ion-input type="text" [(ngModel)]="survey.name" name="name" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Local de residência</ion-label>
-      <ion-input type="text" [(ngModel)]="survey.residence" name="residence" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Idade</ion-label>
+        <ion-input type="number" [(ngModel)]="survey.age" name="age" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Número de BI</ion-label>
-      <ion-input type="text" [(ngModel)]="survey.idNumber" name="idNumber" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Local de residência</ion-label>
+        <ion-input type="text" [(ngModel)]="survey.residence" name="residence" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Província</ion-label>
-      <ion-select [(ngModel)]="survey.province" name="province" (ionChange)="onProvinceChange()" required>
-        <ion-select-option *ngFor="let province of provinces" [value]="province">
-          {{province}}
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Número de BI</ion-label>
+        <ion-input type="text" [(ngModel)]="survey.idNumber" name="idNumber" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Naturalidade</ion-label>
-      <ion-select [(ngModel)]="survey.placeOfBirth" name="placeOfBirth" required>
-        <ion-select-option *ngFor="let city of citiesInSelectedProvince" [value]="city">
-          {{city}}
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-list-header color="primary">Informações de Residência</ion-list-header>
 
-    
-    <ion-item>
-      <ion-label position="floating">Ocupação do requerente</ion-label>
-      <ion-select [(ngModel)]="survey.occupation" name="occupation" interface="popover" (ionChange)="onOccupationChange()">
-        <ion-select-option value="negociante">Negociante</ion-select-option>
-        <ion-select-option value="biscato">Biscato</ion-select-option>
-        <ion-select-option value="funcionario_publico">Funcionário público</ion-select-option>
-        <ion-select-option value="funcionario_privado">Funcionário do sector Privado</ion-select-option>
-        <ion-select-option value="outros">Outros</ion-select-option>
-      </ion-select>
-    </ion-item>
-    
-    <ion-item *ngIf="survey.occupation === 'outros'" class="other-occupation">
-      <ion-label position="floating">Especifique a ocupação</ion-label>
-      <ion-input type="text" [(ngModel)]="survey.otherOccupation" name="otherOccupation"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Província</ion-label>
+        <ion-select [(ngModel)]="survey.province" name="province" (ionChange)="onProvinceChange()" required>
+          <ion-select-option *ngFor="let province of provinces" [value]="province">
+            {{province}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Local de trabalho/atividade</ion-label>
-      <ion-input type="text" [(ngModel)]="survey.workplace" name="workplace" required></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Naturalidade</ion-label>
+        <ion-select [(ngModel)]="survey.placeOfBirth" name="placeOfBirth" required>
+          <ion-select-option *ngFor="let city of citiesInSelectedProvince" [value]="city">
+            {{city}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Estado civil</ion-label>
-      <ion-select [(ngModel)]="survey.maritalStatus" name="maritalStatus" required>
-        <ion-select-option value="solteiro">Solteiro</ion-select-option>
-        <ion-select-option value="casado">Casado</ion-select-option>
-        <ion-select-option value="divorciado">Divorciado</ion-select-option>
-        <ion-select-option value="viuvo">Viúvo</ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-list-header color="primary">Informações Profissionais</ion-list-header>
 
-    <ion-button expand="block" type="submit" class="ion-margin-top">
+      <ion-item>
+        <ion-label position="floating" color="primary">Ocupação do requerente</ion-label>
+        <ion-select [(ngModel)]="survey.occupation" name="occupation" interface="popover" (ionChange)="onOccupationChange()">
+          <ion-select-option value="negociante">Negociante</ion-select-option>
+          <ion-select-option value="biscato">Biscato</ion-select-option>
+          <ion-select-option value="funcionario_publico">Funcionário público</ion-select-option>
+          <ion-select-option value="funcionario_privado">Funcionário do sector Privado</ion-select-option>
+          <ion-select-option value="outros">Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="survey.occupation === 'outros'" class="other-occupation">
+        <ion-label position="floating" color="primary">Especifique a ocupação</ion-label>
+        <ion-input type="text" [(ngModel)]="survey.otherOccupation" name="otherOccupation"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Local de trabalho/atividade</ion-label>
+        <ion-input type="text" [(ngModel)]="survey.workplace" name="workplace" required></ion-input>
+      </ion-item>
+
+      <ion-list-header color="primary">Informações Adicionais</ion-list-header>
+
+      <ion-item>
+        <ion-label color="primary">Estado civil</ion-label>
+        <ion-select [(ngModel)]="survey.maritalStatus" name="maritalStatus" required>
+          <ion-select-option value="solteiro">Solteiro</ion-select-option>
+          <ion-select-option value="casado">Casado</ion-select-option>
+          <ion-select-option value="divorciado">Divorciado</ion-select-option>
+          <ion-select-option value="viuvo">Viúvo</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" type="submit" color="primary" class="ion-margin-top">
       Submeter Inquérito
     </ion-button>
   </form>
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">guide</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
 </ion-content>

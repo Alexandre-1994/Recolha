@@ -1,33 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Social Survey List 
-    </ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title color="light">Inquéritos Sociais</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  padding [fullscreen]="true" class="ion-padding">
-  
-  <!-- Lista de itens -->
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-list>
-    <!-- Item da lista -->
-    <ion-item *ngFor="let inquerito of inqueritos" (click)="verDetalhesInquerito(inquerito)">
-      <!-- Thumbnail com iniciais do nome do requerente -->
-      <ion-thumbnail slot="start">
+    <ion-item *ngFor="let inquerito of inqueritos" (click)="verDetalhesInquerito(inquerito)" button>
+      <ion-avatar slot="start">
         <ion-label>{{ getIniciais(inquerito.nomeRequerente) }}</ion-label>
-      </ion-thumbnail>
-      
-      <!-- Informações -->
+      </ion-avatar>
       <ion-label>
         <h2>{{ inquerito.nomeRequerente }}</h2>
         <p>Data do inquérito: {{ inquerito.dataRealizacao }}</p>
       </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
     </ion-item>
-  </ion-list> 
+  </ion-list>
 
-  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="goToGuidePage()">
+    <ion-fab-button (click)="goToGuidePage()" color="primary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
