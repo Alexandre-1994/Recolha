@@ -67,3 +67,34 @@ ion-content {
       margin: 32px auto;
     }
   }
+
+  .question-container {
+    margin-bottom: 20px;
+  
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    ion-textarea {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+    }
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  
+    span {
+      font-size: 14px;
+    }
+  }
+  
+  ion-button[type="submit"] {
+    margin-top: 20px;
+  }
